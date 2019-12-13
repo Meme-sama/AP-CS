@@ -4,6 +4,7 @@
   "description": "AP submission",
   "main": "bot.js",
   "dependencies": {
+    "discord": "^0.8.2",
     "discord.js": "^11.5.1"
   },
   "devDependencies": {

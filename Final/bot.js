@@ -9,14 +9,15 @@ botsuki.on('ready', () => {
 botsuki.login(auth.token);
 
 botsuki.on('message', msg=> {
-  if (msg.content.substring(0, 1) == '!') {
-    let args = msg.content.substring(0, 1).split(' ');
-    switch (args[0]) {
+  if (msg.content.substr(0, 1) === '!') {
+    let arg = msg.content.substr(1).split(' ');
+    switch (arg[0]) {
       case 'ping':
         msg.reply('pong!');
         break;
-      default:
-      msg.reply('wat m8?');
+      case 'clear':
+
+      break;
     }
   }
 });
