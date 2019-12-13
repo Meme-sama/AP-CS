@@ -1,14 +1,18 @@
 {
-  "name": "Final",
+  "name": "botsuki",
   "version": "1.0.0",
-  "description": "",
+  "description": "AP submission",
   "main": "bot.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Samuel Poveda",
   "license": "ISC"
 }
