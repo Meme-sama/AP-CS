@@ -4,9 +4,11 @@
   "description": "AP submission",
   "main": "bot.js",
   "dependencies": {
+    "@discordjs/uws": "^10.149.0",
     "discord": "^0.8.2",
     "discord.js": "^11.5.1",
-    "opusscript": "0.0.7"
+    "opusscript": "0.0.7",
+    "ytdl-core": "^1.0.3"
   },
   "devDependencies": {
     "eslint": "^6.7.2"
