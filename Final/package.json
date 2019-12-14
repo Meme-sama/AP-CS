@@ -5,7 +5,8 @@
   "main": "bot.js",
   "dependencies": {
     "discord": "^0.8.2",
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "opusscript": "0.0.7"
   },
   "devDependencies": {
     "eslint": "^6.7.2"
