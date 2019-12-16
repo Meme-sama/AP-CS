@@ -7,6 +7,7 @@
     "@discordjs/uws": "^10.149.0",
     "discord": "^0.8.2",
     "discord.js": "^11.5.1",
+    "node-debugger": "^1.0.0",
     "opusscript": "0.0.7",
     "ytdl-core": "^1.0.3"
   },
