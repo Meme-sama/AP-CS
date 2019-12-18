@@ -1,17 +1,17 @@
 const Discord = require('discord.js');
-const botsuki = new Discord.Client(); // TODO: CAHNGE BOTSUKI. KILL HER
+const musicBot = new Discord.Client(); // TODO: CAHNGE BOTSUKI. KILL HER
 const serverQ = require('./serverQData.json'); // used to store the Q (queue) of servers that request music
 const {token, prefix} = require('./auth.json');
 const ytdl = require('ytdl-core');
 let runFlag = false;
 let thisServer; // specifies which server is actively looking for directions
 
-botsuki.on('ready', () => {
-    console.log(`${botsuki.user.tag} has awoken!`);
+musicBot.on('ready', () => {
+    console.log(`${musicBot.user.tag} has awoken!`);
 });
 
 
-botsuki.login(token);
+musicBot.login(token);
 
 function playMusic(connection, msg) {
   /*
@@ -40,7 +40,7 @@ function playMusic(connection, msg) {
     });
 }
 
-botsuki.on('message', msg=> {
+musicBot.on('message', msg=> {
   if (msg.content.substr(0, 1) === prefix) {
     const guildId = msg.guild.id;
     const cmd = msg.content.substr(1).split(' ');
