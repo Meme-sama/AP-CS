@@ -1,6 +1,6 @@
 {
-  "name": "botsuki",
-  "version": "1.0.0",
+  "name": "musicBot",
+  "version": "1.2.0",
   "description": "AP submission",
   "main": "bot.js",
   "dependencies": {

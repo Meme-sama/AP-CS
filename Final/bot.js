@@ -1,13 +1,14 @@
 const Discord = require('discord.js');
-const musicBot = new Discord.Client(); // TODO: CAHNGE BOTSUKI. KILL HER
+const musicBot = new Discord.Client();
 const serverQ = require('./serverQData.json'); // used to store the Q (queue) of servers that request music
 const {token, prefix} = require('./auth.json');
 const ytdl = require('ytdl-core');
-let runFlag = false;
+
+let runFlag = false; // if stream is running, flag will set true and trigger Q system
 let thisServer; // specifies which server is actively looking for directions
 
 musicBot.on('ready', () => {
-    console.log(`${musicBot.user.tag} has awoken!`);
+    console.log('musicBot has awoken!');
 });
 
 
@@ -21,13 +22,20 @@ function playMusic(connection, msg) {
   Check if another song is in Q,
   if not, leave VC
   */
-  runFlag = true;
   thisServer = serverQ[msg.guild.id];
+  try {
   const stream = ytdl(thisServer.q[0], {quality: 'highestaudio', filter: ('audioonly')});
+  }
+  catch {
+    msg.channel.send('umm... I need a valid link, Please!');
+    thisServer.q.shift();
+    return;
+  }
   console.log(stream);
   thisServer.dispatcher = connection.playStream(stream, {volume : 1, bitrate : 98000});
   thisServer.q.shift();
   console.log(thisServer.q);
+  runFlag = true;
   thisServer.dispatcher.on('end', () => {
     if (thisServer.q[0]) {
       playMusic(connection, msg);
