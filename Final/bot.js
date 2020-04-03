@@ -24,7 +24,7 @@ function playMusic(connection, msg) {
   */
   thisServer = serverQ[msg.guild.id];
   try {
-  const stream = ytdl(thisServer.q[0], {quality: 'highestaudio', filter: ('audioonly')});
+    const stream = ytdl(thisServer.q[0], {quality: 'highestaudio', filter: ('audioonly')});
   }
   catch {
     msg.channel.send('umm... I need a valid link, Please!');
@@ -45,7 +45,7 @@ function playMusic(connection, msg) {
       msg.channel.send('Done talking, Please!');
       msg.member.voiceChannel.leave();
     }
-    });
+   });
 }
 
 musicBot.on('message', msg=> {
